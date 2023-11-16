@@ -40,9 +40,9 @@
   @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
   :root {
-    --spat: #7faec5;
+    --spat: #335566;
     --lg-bg: #fafafa;
-    --green: #4ecd5d;
+    --green: #258330;
     --darkblue: #384b61;
   }
 
