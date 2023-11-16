@@ -5,6 +5,9 @@
   <h2>Contact<h2>
   <p>Voel je vrij om contact met ons op te nemen</p>
 
+<div class="main-container">
+  <div class="child-container">
+
 <form action="#" method="post">
         <label for="name">Naam</label>
         <input type="text" id="name" name="name" required placeholder="Jan dekkers">
@@ -16,10 +19,27 @@
         <textarea id="message" name="message" rows="2" required placeholder="Opmerking..."></textarea>
         <button type="submit">Verstuur</button>
     </form>
-
+  <img src="assets/tree.png">
+</div>
+</div>
 </section>
 
 <style>
+.main-container {
+  container: card / inline-size;
+}
+
+.child-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+img{
+  width: 17em;
+  /* margin-left: -1em; */
+  margin-top: -2.5em;
+}
+
   h2{
     padding-top: 2rem;
     color: var(--spat);
@@ -46,10 +66,12 @@ label{
 }
 
 input, textarea{
-  width: 520px;
+  width: 500px;
   height: 45px;
   padding: .7em;
   border-color: #CCCCCC;
+  border-top: #CCCCCC;
+  border-left: #CCCCCC;
   border-radius: 10px;
   border-width:1px;
 }
@@ -64,9 +86,11 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--darkblue);
 }
 
-input.placeholder{
-  opacity: 50%;
-  color:aqua;
+input::placeholder,
+textarea::placeholder{
+  opacity: 80%;
+  color:#CCCCCC;
+  font-style: italic;
 }
 
 button {
@@ -83,9 +107,15 @@ button {
     border: none;
 }
 
+form:valid {
+  opacity: 1;
+  transform: translateX(0);
+  border-color: var(--green);
+}
+
 
   .contact {
-    padding: 4rem 3rem;
+    padding: 4rem 8rem;
     height: auto;
     background-color: var(--lg-bg);
   }
