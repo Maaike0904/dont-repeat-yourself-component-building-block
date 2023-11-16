@@ -1,5 +1,24 @@
 <script>
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    // let swiper = new Swiper(".team-container", {
+    //   effect: "coverflow",
+    //   grabCursor: true,
+    //   centeredSlides: true,
+    //   slidesPerView: "auto",
+    //   loop: true,
+    //   spaceBetween: 32,
+    //   coverflowEffect: {
+    //     rotate: 0,
+    //   },
+    // });
+  });
+
+export let data
+console.log (data)
 </script>
+
 
 <section class="contact section" id="experience">
   <h2>Contact<h2>
@@ -34,13 +53,35 @@
   grid-template-columns: 1fr 1fr;
 }
 
+@container (max-width: 500px) {
+.child-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+img{
+  display: none;
+}
+}
+
+/* @media (min-width: 500px) {
+img{
+  width: 10em;
+}
+} */
+
+@media (max-width: 500px) {
+img{
+  width: 5em;
+}
+}
+
 img{
   width: 17em;
   /* margin-left: -1em; */
   margin-top: -2.5em;
 }
 
-  h2{
+h2{
     padding-top: 2rem;
     color: var(--spat);
   }
@@ -107,16 +148,85 @@ button {
     border: none;
 }
 
-form:valid {
+/* form:valid {
   opacity: 1;
   transform: translateX(0);
   border-color: var(--green);
 }
 
+form:invalid {
+  border-color: orange;
+} */
 
   .contact {
     padding: 4rem 8rem;
     height: auto;
     background-color: var(--lg-bg);
   }
+
+@media (max-width: 500px){
+.contact {
+  padding: 4rem 2rem;
+  height: auto;
+  background-color: var(--lg-bg);
+}
+
+input, textarea {
+  width: 400px;
+  height: 45px;
+  padding: .7em;
+  border-color: #CCCCCC;
+  border-top: #CCCCCC;
+  border-left: #CCCCCC;
+  border-radius: 10px;
+  border-width:1px;
+}
+}
+
+
+@media (max-width: 450px){
+.contact {
+  padding: 4rem 2rem;
+  height: auto;
+  background-color: var(--lg-bg);
+}
+
+input, textarea {
+  width: 320px;
+  height: 45px;
+  padding: .7em;
+  border-color: #CCCCCC;
+  border-top: #CCCCCC;
+  border-left: #CCCCCC;
+  border-radius: 10px;
+  border-width:1px;
+}
+}
+
+@media (min-width: 600px){
+input, textarea {
+  width: 540px;
+  height: 45px;
+  padding: .7em;
+  border-color: #CCCCCC;
+  border-top: #CCCCCC;
+  border-left: #CCCCCC;
+  border-radius: 10px;
+  border-width:1px;
+}
+img{
+  display: flex;
+}
+
+
+}
+
+@media (min-width: 500px){
+.contact {
+  padding: 4rem 2rem;
+  height: auto;
+  background-color: var(--lg-bg);
+}
+}
+
 </style>
