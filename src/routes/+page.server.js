@@ -1,15 +1,9 @@
-import { gql } from "graphql-request";
-import { hygraph } from "$lib/utils/hygraph.js";
+import { gql } from 'graphql-request'
+import { hygraph } from '$lib/utils/hygraph.js'
 
 export async function load() {
   let query = gql`
-    {
-      waterkwaliteits {
-        title
-        subtitel
-        waterkwaliteittext
-        waterkwaliteitfoto
-      }
+    query SPATquery {
       projectens {
         categorie
         createdAt
@@ -62,7 +56,8 @@ export async function load() {
         title
       }
     }
-  `;
-
-  return await hygraph.request(query);
+  `; 
+  
+  return await hygraph.request(query)
 }
+
