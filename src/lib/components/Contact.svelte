@@ -1,44 +1,45 @@
-<script>
-  import { onMount } from "svelte";
+<script src="https://smtpjs.com/v3/smtp.js">
 
-  onMount(() => {
-    // let swiper = new Swiper(".team-container", {
-    //   effect: "coverflow",
-    //   grabCursor: true,
-    //   centeredSlides: true,
-    //   slidesPerView: "auto",
-    //   loop: true,
-    //   spaceBetween: 32,
-    //   coverflowEffect: {
-    //     rotate: 0,
-    //   },
-    // });
-  });
+  function sendEmail(){
+  Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "Maaike.verplancke@hotmail.com",
+      Password : "DECAC525C1E46933CB1FA696F5443DF3038F",
+      To : 'verplanckemaaike@gmail.com',
+      From : document.getElementById("email").value,
+      Subject : "Nieuw Contactformulier van SPATwater",
+      Body : "Name : " + document.getElementById("name").value
+              + "<br> Email: " + document.getElementById("email").value
+              + "<br> Message: " + document.getElementById("message").value
 
-export let data
-console.log (data)
+  }).then(
+    message => alert("Message Sent Succesfully")
+  );
+  }
+  export let data
+  console.log(data)
 </script>
 
 
 <section class="contact section" id="experience">
-  <h2>Contact<h2>
+  <h2>Contact</h2>
   <p>Voel je vrij om contact met ons op te nemen</p>
 
 <div class="main-container">
   <div class="child-container">
 
-<form action="#" method="post">
-        <label for="name">Naam</label>
+<form>
+        <label for="name">Voor- en achternaam*</label>
         <input type="text" id="name" name="name" required placeholder="Jan dekkers">
 
-        <label for="email">E-mail</label>
+        <label for="email">E-mail*</label>
         <input type="email" id="email" name="email" required placeholder="Jandekkers@hotmail.com">
 
-        <label for="message">Notitie</label>
-        <textarea id="message" name="message" rows="2" required placeholder="Opmerking..."></textarea>
+        <label for="message">Notitie*</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Opmerking..."></textarea>
         <button type="submit">Verstuur</button>
     </form>
-  <img src="assets/tree.png">
+  <img src="assets/tree.png" alt="afbeelding boom naast invulformulier">
 </div>
 </div>
 </section>
@@ -76,7 +77,7 @@ img{
 }
 
 img{
-  width: 17em;
+  width: 31em;
   /* margin-left: -1em; */
   margin-top: -2.5em;
 }
@@ -173,13 +174,6 @@ form:invalid {
 
 input, textarea {
   width: 400px;
-  height: 45px;
-  padding: .7em;
-  border-color: #CCCCCC;
-  border-top: #CCCCCC;
-  border-left: #CCCCCC;
-  border-radius: 10px;
-  border-width:1px;
 }
 }
 
