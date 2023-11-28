@@ -31,6 +31,7 @@ declare module '$env/static/private' {
 	export const INIT_CWD: string;
 	export const SHELL: string;
 	export const TERM: string;
+	export const npm_config_open: string;
 	export const npm_config_metrics_registry: string;
 	export const TMPDIR: string;
 	export const npm_config_global_prefix: string;
@@ -48,6 +49,7 @@ declare module '$env/static/private' {
 	export const npm_execpath: string;
 	export const PATH: string;
 	export const npm_package_json: string;
+	export const npm_config_engine_strict: string;
 	export const _: string;
 	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
@@ -108,6 +110,7 @@ declare module '$env/dynamic/private' {
 		INIT_CWD: string;
 		SHELL: string;
 		TERM: string;
+		npm_config_open: string;
 		npm_config_metrics_registry: string;
 		TMPDIR: string;
 		npm_config_global_prefix: string;
@@ -125,6 +128,7 @@ declare module '$env/dynamic/private' {
 		npm_execpath: string;
 		PATH: string;
 		npm_package_json: string;
+		npm_config_engine_strict: string;
 		_: string;
 		LaunchInstanceID: string;
 		npm_config_userconfig: string;
