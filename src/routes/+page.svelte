@@ -1,6 +1,5 @@
 <script>
-  export let data;
-  import Contact from "../lib/components/Contact.svelte";
+  import Contact from "../lib/organisms/Contact.svelte";
 </script>
 
 <Contact />
